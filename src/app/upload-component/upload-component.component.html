@@ -1,5 +1,6 @@
 <div>
-    <h2>File Sharing</h2>
+    <h2 class="mat-display-1">File Sharing</h2>
 </div>
 <input type="file" (change)="uploadFile($event)">
 <div>Download Status: {{ uploadPercent | async }}</div>
+<div *ngIf="downloadURL" [routerLink]="['/files/', id]"> Use this URL to download: /files/{{id}} </div>

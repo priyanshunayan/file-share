@@ -7,6 +7,9 @@ import { environment } from '../environments/environment';
 import { RouterModule, Routes } from '@angular/router';
 import { FileShareComponentComponent } from './file-share-component/file-share-component.component';
 import { UploadComponentComponent } from './upload-component/upload-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 const appRoutes: Routes = [
   {
     path: 'files/:id',
@@ -30,7 +33,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

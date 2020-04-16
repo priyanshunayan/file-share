@@ -7,9 +7,4 @@
 </div>
 <div *ngIf='!deleted'>
     <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
-
-    <button (click)="deleteFile()"> Delete the file</button>
 </div>
-
-
-{{deleted}}

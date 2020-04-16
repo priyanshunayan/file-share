@@ -12,20 +12,11 @@ export class FileShareComponentComponent implements OnInit {
   public downloadURL;
   public deleted = false;
   constructor(private storage: AngularFireStorage, private router: Router) { }
-  deleteFile() {
-    const url = this.router.url;
-    const filePath = url.split('/')[2];
-    try {
-      const fileRef = this.storage.ref(filePath);
-      this.downloadURL = fileRef.getDownloadURL();
-    } catch (e) {
-      console.log("====================>");
-      this.deleted = true;
-    }
-  }
+
   ngOnInit(): void {
     const url = this.router.url;
     const filePath = url.split('/')[2];
+    console.log(filePath);
     try {
       const fileRef = this.storage.ref(filePath);
       this.downloadURL = fileRef.getDownloadURL();
