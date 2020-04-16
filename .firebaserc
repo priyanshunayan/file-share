@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "file-share-7946e": {
+      "hosting": {
+        "file-share": [
+          "file-share-7946e"
+        ]
+      }
+    }
+  }
+}

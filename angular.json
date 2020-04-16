@@ -117,8 +117,13 @@
               "devServerTarget": "file-share:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "file-share"
 }

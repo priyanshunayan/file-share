@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'file-share';
+  constructor(private storage: AngularFireStorage) { }
+  uploadFile(event) {
+    const file = event.target.files[0];
+    const filePath = 'name-your-file-path-here';
+    const ref = this.storage.ref(filePath);
+    const task = ref.put(file);
+  }
 }
