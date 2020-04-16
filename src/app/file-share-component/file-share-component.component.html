@@ -1,0 +1,15 @@
+<p>Download the file</p>
+<h2>Download Link</h2>
+<div *ngIf='deleted'>
+    <div>
+        <h2> The File was deleted..</h2>
+    </div>
+</div>
+<div *ngIf='!deleted'>
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+
+    <button (click)="deleteFile()"> Delete the file</button>
+</div>
+
+
+{{deleted}}
