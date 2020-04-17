@@ -3,6 +3,9 @@ import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Router } from '@angular/router';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressBarMode } from '@angular/material/progress-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-upload-component',
   templateUrl: './upload-component.component.html',
@@ -12,6 +15,10 @@ export class UploadComponentComponent implements OnInit {
   uploadPercent: Observable<number>;
   id: string;
   downloadURL: Observable<string>;
+  color: ThemePalette = 'primary';
+  mode: ProgressBarMode = 'determinate';
+  value = this.uploadPercent;
+  bufferValue = this.uploadPercent;
   constructor(private storage: AngularFireStorage, private router: Router) { }
   uploadFile(event) {
     const file = event.target.files[0];

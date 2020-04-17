@@ -1,6 +1,29 @@
 <div>
-    <h2 class="mat-display-1">File Sharing</h2>
+    <div class="layout-upload">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span>File Sharing</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <mat-card class="input">
+        <mat-card-content class="mat-app-background">
+            <input type="file" (change)="uploadFile($event)">
+        </mat-card-content>
+
+    </mat-card>
+
+
+    <mat-card class="mat-app-background">
+        <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="uploadPercent | async"
+            [bufferValue]="bufferValue">
+        </mat-progress-bar>
+        <div>Upload Status: {{ uploadPercent | async }}</div>
+    </mat-card>
+    <mat-card *ngIf="downloadURL">
+        <mat-card-content>
+            <div [routerLink]="['/files/', id]"> Use this URL to download: /files/{{id}} </div>
+        </mat-card-content>
+
+    </mat-card>
 </div>
-<input type="file" (change)="uploadFile($event)">
-<div>Download Status: {{ uploadPercent | async }}</div>
-<div *ngIf="downloadURL" [routerLink]="['/files/', id]"> Use this URL to download: /files/{{id}} </div>
