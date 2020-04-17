@@ -1,4 +1,10 @@
 # FileShare
+[![Netlify Status](https://api.netlify.com/api/v1/badges/212a64eb-10b5-4909-b0a8-2b9e34a6ede4/deploy-status)](https://app.netlify.com/sites/fast-share/deploys)
+
+
+Visit https://fast-share.netlify.app/  and upload your file. Wait for it to finish. You will see a new card pointing to a address containing the file link. Share that link. its easy to remember by the way. it will be containing only 3 digit number and file extension. Just go to /files/<3digitnumber> or click on that card to see the download link. It's as simple as that.
+
+## Contribution Guidelines:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
